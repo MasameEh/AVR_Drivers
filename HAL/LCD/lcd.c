@@ -1,7 +1,7 @@
 /*
  * lcd.c
  *
- *      Author: ASHRAF
+ *      Author: Mohamed sameh
  */
 #include <avr/delay.h>
 #include "lcd.h"
