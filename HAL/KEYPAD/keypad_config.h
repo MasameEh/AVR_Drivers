@@ -1,6 +1,6 @@
 /* 
  * File:   keypad_config.h
- * Author: Mohamed sameh
+ * Author: Mohamed Sameh
  *
  * Created on August 20, 2022, 7:39 AM
  */
