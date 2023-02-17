@@ -8,7 +8,7 @@
 #ifndef  _KEYPAD_PRIVATE_H
 #define  _KEYPAD_PRIVATE_H
 
-#include "dio.h"
+#include "../MCAL/DIO/dio.h"
 
 typedef struct{
     dio_t port;

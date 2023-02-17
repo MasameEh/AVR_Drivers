@@ -8,7 +8,7 @@
 #ifndef  _KEYPAD_CONFIG_H
 #define  _KEYPAD_CONFIG_H
 
-#include "dio.h"
+#include "MCAL/DIO/dio.h"
 
 #define KEYPAD_RAW_NUM    4
 #define KEYPAD_COLUMN_NUM 4
