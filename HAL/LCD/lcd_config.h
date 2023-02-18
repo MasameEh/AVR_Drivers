@@ -1,9 +1,8 @@
-#ifndef _LCD_CONFIG_H
-#define _LCD_CONFIG_H
 
 
-#include "../mcal/dio/dio.h"
 
+#ifndef LCD_CONFIG_H_
+#define LCD_CONFIG_H_
 
 /****************
  *  USER CONFIG
@@ -15,4 +14,5 @@
 #define LCD_EN_PIN    DIO_PIN1
 
 
-#endif
+
+#endif /* LCD_CONFIG_H_ */
