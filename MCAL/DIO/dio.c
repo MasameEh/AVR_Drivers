@@ -20,7 +20,7 @@
  * @example: 
  * dio_set_direction(DIO_PORTA, 4, OUTPUT);
  */
-void dio_set_direction(dio_t port, dio_pin_t pin, dio_direction_t direction)
+void dio_set_pin_direction(dio_t port, dio_pin_t pin, dio_direction_t direction)
 {
 	switch (port)
 	{
@@ -84,7 +84,7 @@ void dio_set_level(dio_t port, dio_pin_t pin, dio_level_t value)
 }
 
 
-dio_level_t dio_get_level(dio_t port, dio_pin_t pin)
+dio_level_t dio_get_pin(dio_t port, dio_pin_t pin)
 {
 	switch (port)
 	{
@@ -154,7 +154,7 @@ void dio_set_port_direction(dio_t port, dio_direction_t direction)
 
 
 
-void dio_set_port_level(dio_t port, uint8_t value)
+void dio_write_port(dio_t port, uint8_t value)
 {
 	switch (port)
 	{

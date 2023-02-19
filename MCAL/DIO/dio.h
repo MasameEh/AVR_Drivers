@@ -38,10 +38,10 @@ typedef enum
     DIO_LEVEL_HIGH = 1
 } dio_level_t;
 
-void dio_set_direction(dio_t port, dio_pin_t pin, dio_direction_t direction);
+void dio_set_pin_direction(dio_t port, dio_pin_t pin, dio_direction_t direction);
 void dio_set_port_direction(dio_t port, dio_direction_t direction);
-void dio_set_level(dio_t port, dio_pin_t pin, dio_level_t value);
-void dio_set_port_level(dio_t port, dio_level_t value);
-dio_level_t dio_get_level(dio_t port, dio_pin_t pin);
+void dio_write_pin(dio_t port, dio_pin_t pin, dio_level_t value);
+void dio_write_port(dio_t port, dio_level_t value);
+dio_level_t dio_get_pin(dio_t port, dio_pin_t pin);
 
 #endif /* MCAL_DIO_DIO_H_ */

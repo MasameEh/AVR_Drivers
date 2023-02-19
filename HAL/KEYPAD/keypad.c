@@ -54,12 +54,12 @@ char keypad_get_pressed_key()
 		{
 			//delay for simulation
 			_delay_ms(2);
-			if(dio_get_level(raw_arr[r].port, raw_arr[r].pin) == PRESSED_LEVEL)
+			if(dio_get_pin(raw_arr[r].port, raw_arr[r].pin) == PRESSED_LEVEL)
 			{
 				//wait debounce
 				_delay_ms(2);
 				//wait
-				while(dio_get_level(raw_arr[r].port, raw_arr[r].pin) == PRESSED_LEVEL)
+				while(dio_get_pin(raw_arr[r].port, raw_arr[r].pin) == PRESSED_LEVEL)
 				{
 				}
 				//
