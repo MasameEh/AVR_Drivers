@@ -1,7 +1,6 @@
 /*
  * LCD.c
  *
- * Created: 2/17/2023 10:13:21 AM
  *  Author: Mohamed Sameh
  */ 
 #include "LCD.h"

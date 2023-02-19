@@ -1,7 +1,6 @@
 /*
  * LCD.h
  *
- * Created: 2/17/2023 10:15:30 AM
  *  Author: Mohamed Sameh
  */ 
 

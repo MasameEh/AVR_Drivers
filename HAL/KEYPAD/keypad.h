@@ -1,17 +1,17 @@
-/* 
- * File:   keypad.h
- * Author: Mohamed Sameh
+/*
+ * keypad.h
  *
- * Created on August 20, 2022, 7:38 AM
- */
+ *  Author: Mohamed Sameh
+ */ 
 
-#ifndef KEYPAD_KEYPAD_H_
-#define KEYPAD_KEYPAD_H_
 
-#include <stdint.h>
+#ifndef KEYPAD_H_
+#define KEYPAD_H_
+
+#include "keypad_config.h"
+#include "keypad_private.h"
 
 void keypad_init();
-uint8_t key_get_pressed_key();
+char keypad_get_pressed_key();
 
-#endif /* KEYPAD_KEYPAD_H_ */
-
+#endif /* KEYPAD_H_ */
