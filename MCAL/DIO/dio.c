@@ -18,29 +18,26 @@
  * @param direction : 
  * 						this value must be type of dio_direction_t
  * @example: 
- * dio_set_direction(DIO_PORTA, 4, OUTPUT);
+ * dio_set_pin_direction(DIO_PORTA, 4, OUTPUT);
  */
 void dio_set_pin_direction(dio_t port, dio_pin_t pin, dio_direction_t direction)
 {
 	switch (port)
 	{
 	case DIO_PORTA:
-		/* code */
+		
 		DDRA &= ~(0x01<<pin);   // clear bit
 		DDRA |= direction <<pin; // set value
 		break;
 	case DIO_PORTB:
 		DDRB &= ~(0x01<<pin);   // clear bit
 		DDRB |= direction <<pin; // set value
-		/* code */
 		break;
 	case DIO_PORTC:
-		/* code */
 		DDRC &= ~(0x01<<pin);   // clear bit
 		DDRC |= direction << pin; // set value
 		break;
 	case DIO_PORTD:
-		/* code */
 		DDRD &= ~(0x01<<pin);   // clear bit
 		DDRD |= direction << pin; // set value
 		break;
@@ -52,27 +49,23 @@ void dio_set_pin_direction(dio_t port, dio_pin_t pin, dio_direction_t direction)
 }
 
 
-void dio_set_level(dio_t port, dio_pin_t pin, dio_level_t value)
+void dio_write_pin(dio_t port, dio_pin_t pin, dio_level_t value)
 {
 	switch (port)
 	{
 	case DIO_PORTA:
-		/* code */
 		PORTA &= ~(0x01<<pin);   // clear bit
 		PORTA |= value <<pin; // set value
 		break;
 	case DIO_PORTB:
 		PORTB &= ~(0x01<<pin);   // clear bit
 		PORTB |= value <<pin; // set value
-		/* code */
 		break;
 	case DIO_PORTC:
-		/* code */
 		PORTC &= ~(0x01<<pin);   // clear bit
 		PORTC |= value << pin; // set value
 		break;
 	case DIO_PORTD:
-		/* code */
 		PORTD &= ~(0x01<<pin);   // clear bit
 		PORTD |= value << pin; // set value
 		break;
