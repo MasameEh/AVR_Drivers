@@ -6,10 +6,12 @@
 
 
 #include "keypad.h"
-#define F_CPU 8000000UL
-#include <util/delay.h>
 
 
+/**
+ * @brief 
+ * 
+ */
 void keypad_init()
 {
 	int8_t i,r;
@@ -30,6 +32,11 @@ void keypad_init()
 
 }
 
+/**
+ * @brief 
+ * 
+ * @return char 
+ */
 char keypad_get_pressed_key()
 {
 	

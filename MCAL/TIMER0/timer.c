@@ -5,10 +5,10 @@
  */ 
 
 #include "timer.h"
-#include <avr/io.h>
-#include <avr/interrupt.h>
-
-
+/**
+ * @brief 
+ * 
+ */
 void timer0_normalmode_init()
 {
 	//PRESCALER -> 1024
@@ -19,20 +19,29 @@ void timer0_normalmode_init()
 	SET_BIT(TIMSK,TOIE0);
 }
 
-
+/**
+ * @brief 
+ * 
+ */
 void timer0_CTC_init()
 {
 	//select CTC mode
 	SET_BIT(TCCR0,WGM01);
+	//load a value in OCR0 
+	OCR0=78;
 	//PRESCALER -> 1024
 	SET_BIT(TCCR0, CS00);
 	SET_BIT(TCCR0, CS02);
 	//
 	//enable interrupt
 	sei();
-	SET_BIT(TIMSK,TOIE0);
+	SET_BIT(TIMSK,OCIE0);
 }
 
+/**
+ * @brief 
+ * 
+ */
 void timer0_deinit()
 {
 	//PRESCALER -> NOCLOCK SOURCE
@@ -43,6 +52,11 @@ void timer0_deinit()
 	CLR_BIT(TIMSK, TOIE0);
 }
 
+/**
+ * @brief 
+ * 
+ * @param v 
+ */
 void timer1_fastPWM_A(double v)
 {
 	//set OC1A as output pin 
@@ -60,6 +74,11 @@ void timer1_fastPWM_A(double v)
 	SET_BIT(TCCR1A,COM1A1);
 }
 
+/**
+ * @brief 
+ * 
+ * @param v 
+ */
 void timer1_fastPWM_B(double v)
 {
 	//set OC1B as output pin

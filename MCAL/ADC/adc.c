@@ -1,8 +1,16 @@
+/*
+ * File: adc.c
+ *
+ * Author: Mohamed Sameh
+ * 
+ */
+
 #include "adc.h"
-#include <avr/io.h>
 
-
-
+/**
+ * @brief 
+ * 
+ */
 void adc_init(void)
 {
     //
@@ -20,14 +28,23 @@ void adc_init(void)
     ADCSRA |= 0b1<<ADEN;
 }
 
-
-void adc_select_channel(uint8_t channel)
+/**
+ * @brief 
+ * 
+ * @param channel 
+ */
+void adc_select_channel(uint8 channel)
 {
     ADMUX &= ~(0b11111<<MUX0);
     ADMUX |= channel<<MUX0;
 }
 
-void adc_set_trigger(uint8_t state)
+/**
+ * @brief 
+ * 
+ * @param state 
+ */
+void adc_set_trigger(uint8 state)
 {
     if(state == 0)
     {
@@ -39,27 +56,40 @@ void adc_set_trigger(uint8_t state)
     }
 }
 
-
+/**
+ * @brief 
+ * 
+ * @param trigger 
+ */
 void adc_select_trigger(adc_trigger_t trigger)
 {
     SFIOR &= ~(0b111<<ADTS0);
     SFIOR |= trigger<<ADTS0;
 }
 
-
+/**
+ * @brief 
+ * 
+ */
 void adc_start_conv()
 {
     ADCSRA |= 0b1<<ADSC;
 }
-uint8_t adc_is_dataready()
+
+/**
+ * @brief 
+ * 
+ * @return uint8 
+ */
+uint8 adc_is_dataready()
 {
-    uint8_t result = 0x01&(ADCSRA>>ADIF);  //read flag
+    uint8 result = 0x01&(ADCSRA>>ADIF);  //read flag
     ADCSRA |= 0b1 <<ADIF;  //clear flag
     return result;
 }
-uint16_t adc_get_data()
+uint16 adc_get_data()
 {
-    uint16_t adc_val;
+    uint16 adc_val;
     adc_val = ADCL;
     adc_val |= ADCH << 8;
     return adc_val;

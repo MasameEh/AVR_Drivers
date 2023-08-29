@@ -1,10 +1,16 @@
-#include <avr/io.h> 
+ /* 
+ * File:   spi.c
+ * Author: Mohamed sameh
+ *
+ * Created on September 1, 2022, 1:44 PM
+ */
+
 #include "spi.h"
-#include "bit_math.h"
 
-
-
-
+/**
+ * @brief 
+ * 
+ */
 void spi_init_master()
 {   
   
@@ -30,6 +36,10 @@ void spi_init_master()
 
 }
 
+/**
+ * @brief 
+ * 
+ */
 void spi_init_slave()
 {
     //LSB
@@ -47,7 +57,13 @@ void spi_init_slave()
     CLR_BIT(SPCR, SPIE);
 }
 
-uint8_t spi_transfer(uint8_t data)
+/**
+ * @brief 
+ * 
+ * @param data 
+ * @return uint8 
+ */
+uint8 spi_transfer(uint8 data)
 {
     SPDR = data;
     //waiting for transfer to end (busy wait)

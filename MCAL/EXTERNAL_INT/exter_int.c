@@ -1,14 +1,24 @@
+/*
+ * File: exter_int.c
+ *
+ * Author: Mohamed Sameh
+ * 
+ */
+
 #include "exter_int.h"
-#include <avr/io.h>
 
-
-void exterint_set_status(exterint_t int_num, uint8_t status, exterint_event_t event)
+/**
+ * @brief 
+ * 
+ * @param int_num 
+ * @param status 
+ * @param event 
+ */
+void exterint_set_status(exterint_t int_num, uint8 status, exterint_event_t event)
 {
     switch (int_num)
     {
     case EXTERINT_INT0:
-        /* code */
-
         //disable interrupt 
         GICR &= ~(0b1<<INT0);
         //select the event

@@ -16,11 +16,11 @@
 
 /* Section : Includes */
 #include <avr/io.h>
-#include <stdint.h>
+#include <util/delay.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "../../LIBRARY/Bit_Math.h"
-
+#include "../../LIBRARY/Platform_Types.h"
 /* Section : Macro Declarations */
 
 /* Section : Macro Functions Declarations */
@@ -86,8 +86,6 @@ void dio_write_pin(dio_t port, dio_pin_t pin, dio_level_t value);
  * @param direction The desired direction (DIO_DIRECTION_INPUT or DIO_DIRECTION_OUTPUT).
  */
 void dio_set_port_direction(dio_t port, dio_direction_t direction);
-
-
 
 /**
  * @brief Writes a value to all pins on a given port.

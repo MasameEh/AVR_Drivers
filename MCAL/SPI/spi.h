@@ -8,13 +8,20 @@
 #ifndef SPI_H
 #define	SPI_H
 
-#include <stdint.h>
+/* -------------- Includes -------------- */
+#include <avr/io.h>
+#include"../../LIBRARY/Platform_Types.h"
+#include"../../LIBRARY/Bit_Math.h"
+/* -------------- Macro Declarations ------------- */
 
+/* -------------- Macro Functions Declarations --------------*/
+
+/* -------------- Data Types Declarations --------------  */
+
+/* -------------- Functions Declarations --------------*/
 void spi_init_master();
 void spi_init_slave();
-uint8_t spi_transfer(uint8_t);
-
-
+uint8 spi_transfer(uint8 data);
 
 
 #endif	/* SPI_H */

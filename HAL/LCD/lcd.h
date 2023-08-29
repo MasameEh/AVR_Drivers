@@ -8,7 +8,8 @@
 #ifndef LCD_H_
 #define LCD_H_
 #include "LCD_config.h"
-#include <stdint.h>
+#include "../../MCAL/DIO/dio.h"
+
 #define EIGHT_BITS 0x38
 #define CLEAR_SCREEN 0x01
 #define CURSOR_ON_DISPLAY_ON 0x0e

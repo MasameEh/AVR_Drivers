@@ -1,10 +1,13 @@
-#include <avr/io.h> 
+
+/* 
+ * File:   uart.c
+ * Author: Mohamed Sameh
+ *
+ * Created on August 29, 2022, 2:14 PM
+ */
+
 #include "uart.h"
 
-
-#define SET_BIT(reg, bit_n)   reg|= 1<<bit_n
-#define CLR_BIT(reg, bit_n)   reg&= ~(1<<bit_n)
-#define GET_BIT(reg, bit_n)   ((reg>>bit_n)&1)
 
 void (*g_tx_cb)(void);
 
@@ -61,19 +64,19 @@ void uart_init()
     
 }
 
-uint8_t uart_receive_data()
+uint8 uart_receive_data()
 {
  return UDR;
 }
 
 
-void uart_send_data(uint8_t data)
+void uart_send_data(uint8 data)
 {
     while( GET_BIT(UCSRA, UDRE) != 1 );
     UDR = data;
 }
 
-uint8_t uart_isdata_ready()
+uint8 uart_isdata_ready()
 {
     return GET_BIT(UCSRA,RXC);
 }
@@ -91,7 +94,7 @@ void uart_sendstring(char* str)
     }
 }
 
-void uart_receive_string(char* str, uint8_t length,char terminate)
+void uart_receive_string(char* str, uint8 length,char terminate)
 {
     uint8_t i = 0;
     do

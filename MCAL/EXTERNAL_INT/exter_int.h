@@ -1,8 +1,20 @@
+/*
+ * File: exter_int.c
+ *
+ * Author: Mohamed Sameh
+ * 
+ */
+
 #ifndef EXTER_INT_H_
 #define EXTER_INT_H_
+/* -------------- Includes -------------- */
+#include"../../LIBRARY/Platform_Types.h"
 
-#include <stdint.h>
+/* -------------- Macro Declarations ------------- */
 
+/* -------------- Macro Functions Declarations --------------*/
+
+/* -------------- Data Types Declarations --------------  */
 typedef enum{
     EXTERINT_INT0,
     EXTERINT_INT1,
@@ -16,7 +28,7 @@ typedef enum{
     EXTERINT_LOW_LEVEL = 0
 }exterint_event_t;
 
-
-void exterint_set_status(exterint_t int_num, uint8_t status, exterint_event_t event);
+/* -------------- Functions Declarations --------------*/
+void exterint_set_status(exterint_t int_num, uint8 status, exterint_event_t event);
 
 #endif

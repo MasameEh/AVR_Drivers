@@ -1,12 +1,14 @@
 /*
  * LCD.c
  *
- *  Author: Mohamed Sameh
+ * Author: Mohamed Sameh
  */ 
 #include "LCD.h"
-#include "../../MCAL/DIO/dio.h"
-#include <util/delay.h>
 
+/**
+ * @brief 
+ * 
+ */
 void LCD_init(void){
 	
 	_delay_ms(30);
@@ -26,6 +28,10 @@ void LCD_init(void){
 	_delay_ms(1);
 }
 
+/**
+ * @brief 
+ * 
+ */
 void LCD_send_falling_edge()
 {
 	dio_write_pin(LCD_EN_PORT, LCD_EN_PIN, DIO_LEVEL_HIGH);
@@ -34,6 +40,11 @@ void LCD_send_falling_edge()
 	_delay_ms(3);
 }
 
+/**
+ * @brief 
+ * 
+ * @param cmd 
+ */
 void LCD_send_cmd(char cmd)
 {
 	//read/write -> always write
@@ -44,6 +55,11 @@ void LCD_send_cmd(char cmd)
 	LCD_send_falling_edge();
 }
 
+/**
+ * @brief 
+ * 
+ * @param data 
+ */
 void LCD_send_char(char data)
 {
 	//RS-> DATA:1
@@ -53,6 +69,11 @@ void LCD_send_char(char data)
 
 }
 
+/**
+ * @brief 
+ * 
+ * @param data 
+ */
 void LCD_send_string(char *data)
 {
 	while((*data) != '\0')
@@ -62,7 +83,10 @@ void LCD_send_string(char *data)
 	}
 }
 
-
+/**
+ * @brief 
+ * 
+ */
 void LCD_clearscreen()
 {
 	LCD_send_cmd(CLEAR_SCREEN);
@@ -78,7 +102,7 @@ void LCD_clearscreen()
  */
 void LCD_move_curser(uint8_t x, uint8_t y)
 {
-	uint8_t address = x;
+	uint8 address = x;
 	if(y == 1)
 	{
 		address += 0x40;
