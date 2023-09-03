@@ -17,12 +17,11 @@
 /* Section : Includes */
 #include <avr/io.h>
 #include <stdio.h>
-#define F_CPU 8000000UL
 #include <util/delay.h>
 #include "../../LIBRARY/Bit_Math.h"
 #include "../../LIBRARY/Platform_Types.h"
 /* Section : Macro Declarations */
-
+#define F_CPU 8000000UL
 /* Section : Macro Functions Declarations */
 
 

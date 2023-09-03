@@ -22,7 +22,7 @@
  */
 void dio_set_pin_direction(dio_t port, dio_pin_t pin, dio_direction_t direction)
 {
-	volatile uint8_t *ddr_register = NULL;
+	volatile uint8 *ddr_register = NULL;
 
     switch (port)
     {
